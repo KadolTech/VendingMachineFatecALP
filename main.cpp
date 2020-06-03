@@ -33,7 +33,7 @@ int main()
     {
 
       for (int i = 0; i < 10; i++){
-         faturamentoMaximo += qtdProduto[i] * precosVenda[i]; 
+         faturamentoMaximo += 5 * precosVenda[i]; 
       }
       cout << "1 - Visualizar faturamento, 2 - Repor Estoque" << endl;
       cin >> opc;
