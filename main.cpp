@@ -33,7 +33,7 @@ int main()
     {
 
       for (int i = 0; i < 10; i++){
-         faturamentoMaximo += 5 * precosVenda[i]; 
+         faturamentoMaximo += qtdProduto[i] * precosVenda[i]; 
       }
       cout << "1 - Visualizar faturamento, 2 - Repor Estoque" << endl;
       cin >> opc;
@@ -43,7 +43,7 @@ int main()
         
             cout << "=-=- Dados da máquina -=-=" << endl;
             cout << "     Faturamento atual: " << faturamentoTotal << endl;
-            cout << "     Ainda pode faturar: " << faturamentoMaximo  - faturamentoTotal << endl;
+            cout << "     Ainda pode faturar: " << faturamentoMaximo  << endl;
             cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
             cout << endl;
             break;
