@@ -10,20 +10,15 @@ using namespace std;
 int main()
 {
   string produtos[10] = {"Fandangos", "M&M", "Pepsi", "Coca-Cola", "Sprite", "Twix", "Skittle", "Kinder Chocolate", "Cheetos", "Doritos"};
-
   float precosVenda[10] = {5.0, 1.50, 3.50, 3.50, 3.0, 2.0, 2.0, 1.0, 4.5, 6.0};
-
   int qtdProduto[11] = {5,5,5,5,5,5,5,5,5,5};
 
   int opt;
-  float dinheiro;
-  float troco = 0;
-  float lucroMaximo = 0;
-  float lucroTotal = 0;
-  string maisDinheiro;
+  float dinheiro, troco = 0, faturamentoMaximo = 0, faturamentoTotal = 0;
+  int codigoEstoque, opc, qtd;
   
   cout << fixed << setprecision(2);
- while(true){
+  while(true){
 
      for(int i = 0; i < 10; i++)
      {
@@ -38,15 +33,30 @@ int main()
     {
 
       for (int i = 0; i < 10; i++){
-         lucroMaximo += 5 * precosVenda[i]; 
-    }
-
-      cout << "=-=- Dados da máquina -=-=" << endl;
-      cout << "     Lucro liquido: " << lucroTotal << endl;
-      cout << "     Ainda pode lucrar: " << (lucroMaximo)/2  - lucroTotal << endl;
-      cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
-      cout << endl;
-      lucroMaximo = 0;
+         faturamentoMaximo += qtdProduto[i] * precosVenda[i]; 
+      }
+      cout << "1 - Visualizar faturamento, 2 - Repor Estoque" << endl;
+      cin >> opc;
+      switch (opc)
+      {
+        case 1:
+        
+            cout << "=-=- Dados da máquina -=-=" << endl;
+            cout << "     Faturamento atual: " << faturamentoTotal << endl;
+            cout << "     Ainda pode faturar: " << faturamentoMaximo  - faturamentoTotal << endl;
+            cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
+            cout << endl;
+            break;
+        case 2:
+            cout << "Insira o código do produto: ";
+            cin >> codigoEstoque;
+            cout << "Insira a quantidade: ";
+            cin >> qtd; 
+            qtdProduto[codigoEstoque - 1] = qtdProduto[codigoEstoque - 1] + qtd;
+            cout << endl;
+            break;
+      }
+      faturamentoMaximo = 0;
       continue;
     }
 
@@ -80,7 +90,7 @@ int main()
        cout << "            Produto retirado: " << produtos[opt - 1] << endl;
        qtdProduto[opt - 1] = qtdProduto[opt - 1] - 1;
        troco = dinheiro - precosVenda[opt - 1];
-       lucroTotal += (precosVenda[opt - 1]/2); //Lucro líquido da máquina//
+       faturamentoTotal += precosVenda[opt - 1]; //Lucro líquido da máquina//
        cout << "             Seu troco: " << troco << endl;
        cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
        cout << endl;
