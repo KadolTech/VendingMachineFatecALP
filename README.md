@@ -9,4 +9,5 @@ Para a disciplina de Algoritmos e Lógica de Programação.
 
 
 1. O código fonte se encontra em em main.cpp
+2. Existem 10 produtos pré-definidos cujas quantidades podem ser manipuladas.
 
