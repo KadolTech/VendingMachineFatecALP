@@ -14,8 +14,11 @@ int main()
   int qtdProduto[11] = {5,5,5,5,5,5,5,5,5,5};
 
   int opt;
-  float dinheiro, troco = 0, faturamentoMaximo = 0, faturamentoTotal = 0;
+  float dinheiro, troco = 0, faturamentoMaximo = 0, faturamentoTotal = 0,precoProduto;
   int codigoEstoque, opc, qtd;
+  int senha = 11;
+  int pos;
+  string nomeProduto;
   
   cout << fixed << setprecision(2);
   while(true){
@@ -29,32 +32,72 @@ int main()
     cin >> opt;
     cout << endl;
 
-    if(opt == 11)
+    if(opt == senha)
     {
 
       for (int i = 0; i < 10; i++){
          faturamentoMaximo += qtdProduto[i] * precosVenda[i]; 
       }
-      cout << "1 - Visualizar faturamento, 2 - Repor Estoque" << endl;
+      cout << "1 - Visualizar faturamento, 2 - Repor Estoque, 3 - Trocar senha, 4 - adicionar novo produto" << endl;
       cin >> opc;
       switch (opc)
       {
         case 1:
         
-            cout << "=-=- Dados da mÃ¡quina -=-=" << endl;
+            cout << "=-=- Dados da máquina -=-=" << endl;
             cout << "     Faturamento atual: " << faturamentoTotal << endl;
             cout << "     Ainda pode faturar: " << faturamentoMaximo  << endl;
             cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
             cout << endl;
             break;
         case 2:
-            cout << "Insira o cÃ³digo do produto: ";
+            cout << "Insira o código do produto: ";
             cin >> codigoEstoque;
             cout << "Insira a quantidade: ";
-            cin >> qtd; 
-            qtdProduto[codigoEstoque - 1] = qtdProduto[codigoEstoque - 1] + qtd;
+            cin >> qtd;
+            while((qtd + qtdProduto[codigoEstoque - 1]) > 10)
+            {
+              cout << "Nao eh possivel adiconar mais de 10 produtos na maquina" << endl;
+              cout << "Insira uma nova quantidade: ";
+              cin >> qtd;
+            }
+            qtdProduto[codigoEstoque -1] += qtd;
             cout << endl;
             break;
+        case 3:
+          cout << "Insira a nova senha: ";
+          cin >> senha;
+          cout << "Senha alterada com sucesso!" << endl;
+          cout << endl;
+        case 4:
+          cout << "Insira a posicao na maquina para adicionar o novo produto: ";
+          cin >> pos; //posicao do produto
+          while(pos > 10)
+          {
+            cout << "Nao eh possivel cadastrar mais que 10 produtos!";
+            cout << "Insira uma nova posicao: ";
+            cin >> pos;
+          }
+          cout << "Insira o nome do novo produto: ";
+          cin >> nomeProduto;
+          cout << "Informe o preco do novo produto: R$";
+          cin >> precoProduto;
+          cout << "Insira a quantidade: ";
+          cin >> qtd;
+          while(qtd > 10)
+          {
+            cout << "Nao eh possivel adicionar mais de 10 unidades" << endl;
+            cout << "Insira uma nova quantidade: ";
+            cin >> qtd;
+          }
+          produtos[pos-1] = nomeProduto;
+          qtdProduto[pos-1] = qtd;
+          precosVenda[pos-1] = precoProduto;
+          cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
+          cout << "Novo produto cadastrado com sucesso!" << endl;
+          cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
+          cout << endl;
+          break;
       }
       faturamentoMaximo = 0;
       continue;
@@ -67,11 +110,11 @@ int main()
     cout << endl; 
 
   
-    if(dinheiro - precosVenda[opt - 1] < 0) //Verifica se o dinheiro inserido pelo usuÃ¡rio Ã© suficiente para a compra.
+    if(dinheiro - precosVenda[opt - 1] < 0) //Verifica se o dinheiro inserido pelo usuário é suficiente para a compra.
     {
       cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
       cout << "         Valor insuficiente." << endl;
-      cout << "         Valor retornado ao usuÃ¡rio: R$ " << dinheiro << endl;
+      cout << "         Valor retornado ao usuário: R$ " << dinheiro << endl;
       cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
       cout << endl;
       continue;
@@ -81,7 +124,7 @@ int main()
      {
        cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
        cout << "         Sem unidades disponiveis" << endl;
-       cout << "         Valor retornado ao usuÃ¡rio: R$" << dinheiro << endl;
+       cout << "         Valor retornado ao usuário: R$" << dinheiro << endl;
        cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
      }
      else
@@ -90,7 +133,7 @@ int main()
        cout << "            Produto retirado: " << produtos[opt - 1] << endl;
        qtdProduto[opt - 1] = qtdProduto[opt - 1] - 1;
        troco = dinheiro - precosVenda[opt - 1];
-       faturamentoTotal += precosVenda[opt - 1]; //Lucro lÃ­quido da mÃ¡quina//
+       faturamentoTotal += precosVenda[opt - 1]; //Lucro líquido da máquina//
        cout << "             Seu troco: " << troco << endl;
        cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
        cout << endl;
