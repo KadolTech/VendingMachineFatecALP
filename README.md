@@ -16,7 +16,7 @@ Para a disciplina de Algoritmos e Lógica de Programação.
 
 #### 3. É possível adicionar novos produtos, respeitando a quantidade de 10 itens por slot.
 
-#### 4. É possível adicionar novas variedades de produto, desde que este esteja cadastrado num slot específico.
+#### 4. É possível adicionar novas variedades de produto, desde que estes sejam cadastrados em um slot específico. Se houver um produto neste slot, ele será sobrescrito.
 
-#### 5. Para ativar o modo administrador basta que se colo que a senha referida.
+#### 5. Para ativar o modo administrador basta que se coloque a senha referida (11).
 
