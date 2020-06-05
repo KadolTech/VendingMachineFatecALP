@@ -20,3 +20,8 @@ Para a disciplina de Algoritmos e Lógica de Programação.
 
 #### 5. Para ativar o modo administrador basta que se coloque a senha referida (11).
 
+#### 6. Depois da primeira execução é possível colocar qualquer senha desejada.
+
+#### 7. A máquina fica em loop infinito simulando o funcionamento real, enquanto houver 'energia elétrica' disponível ela está ativa.
+
+
