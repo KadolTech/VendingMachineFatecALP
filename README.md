@@ -10,6 +10,8 @@ Para a disciplina de Algoritmos e Lógica de Programação.
 ![alt text](https://sc01.alicdn.com/kf/UT8WWkgXZFaXXagOFbXt/205728887/UT8WWkgXZFaXXagOFbXt.jpg_.webp)
 
 
+## Considerações:
+
 #### 1. O código fonte se encontra em em main.cpp
 
 #### 2. Existem 10 produtos pré-definidos cujas quantidades podem ser manipuladas.
