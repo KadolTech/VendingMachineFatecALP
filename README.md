@@ -24,6 +24,6 @@ Para a disciplina de Algoritmos e Lógica de Programação.
 
 #### 6. Depois da primeira execução é possível colocar qualquer senha desejada.
 
-#### 7. A máquina fica em loop infinito simulando o funcionamento real, enquanto houver 'energia elétrica' disponível ela está ativa.
+#### 7. A máquina fica em loop infinito simulando o funcionamento real, enquanto houver 'energia elétrica' disponível ela continuará ativa.
 
 
