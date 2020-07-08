@@ -1,8 +1,8 @@
 # Vending Machine - NP1 ALP
-Trabalho avaliativo NP1 realizado por: 
+## Trabalho avaliativo NP1 realizado por: 
 
-Breno Costa Zukowski Marques 
-Jean Luca Dos Santos Silva 
+#### Breno Costa Zukowski Marques 
+#### Jean Luca Dos Santos Silva 
 
 Para a disciplina de Algoritmos e Lógica de Programação.
 
