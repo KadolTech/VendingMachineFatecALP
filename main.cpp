@@ -1,5 +1,5 @@
-//Jean Luca Dos Santos Silva RA: 2840482011044
-//Breno Costa Zukowski Marques RA: 2840482011010
+//Jean Luca Dos Santos Silva RA: 
+//Breno Costa Zukowski Marques RA: 
 
 #include<iostream>
 #include <string>
@@ -44,14 +44,14 @@ int main()
       {
         case 1:
         
-            cout << "=-=- Dados da máquina -=-=" << endl;
+            cout << "=-=- Dados da mÃ¡quina -=-=" << endl;
             cout << "     Faturamento atual: " << faturamentoTotal << endl;
             cout << "     Ainda pode faturar: " << faturamentoMaximo  << endl;
             cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
             cout << endl;
             break;
         case 2:
-            cout << "Insira o código do produto: ";
+            cout << "Insira o cÃ³digo do produto: ";
             cin >> codigoEstoque;
             cout << "Insira a quantidade: ";
             cin >> qtd;
@@ -110,11 +110,11 @@ int main()
     cout << endl; 
 
   
-    if(dinheiro - precosVenda[opt - 1] < 0) //Verifica se o dinheiro inserido pelo usuário é suficiente para a compra.
+    if(dinheiro - precosVenda[opt - 1] < 0) //Verifica se o dinheiro inserido pelo usuÃ¡rio Ã© suficiente para a compra.
     {
       cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
       cout << "         Valor insuficiente." << endl;
-      cout << "         Valor retornado ao usuário: R$ " << dinheiro << endl;
+      cout << "         Valor retornado ao usuÃ¡rio: R$ " << dinheiro << endl;
       cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
       cout << endl;
       continue;
@@ -124,7 +124,7 @@ int main()
      {
        cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
        cout << "         Sem unidades disponiveis" << endl;
-       cout << "         Valor retornado ao usuário: R$" << dinheiro << endl;
+       cout << "         Valor retornado ao usuÃ¡rio: R$" << dinheiro << endl;
        cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
      }
      else
@@ -133,7 +133,7 @@ int main()
        cout << "            Produto retirado: " << produtos[opt - 1] << endl;
        qtdProduto[opt - 1] = qtdProduto[opt - 1] - 1;
        troco = dinheiro - precosVenda[opt - 1];
-       faturamentoTotal += precosVenda[opt - 1]; //Lucro líquido da máquina//
+       faturamentoTotal += precosVenda[opt - 1]; //Lucro lÃ­quido da mÃ¡quina//
        cout << "             Seu troco: " << troco << endl;
        cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
        cout << endl;
